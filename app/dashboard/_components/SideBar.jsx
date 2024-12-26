@@ -40,8 +40,7 @@ function SideBar() {
   return (
     <div className='fixed h-full md:w-64 p-5 shadow-md'>
       <Link href={'/'}>
-        <div className='font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 hover:scale-105 transition-transform'>
-          A
+          <span className='text-2xl font-bold'>DASHBOARD</span>
         </div>
       </Link>
         <hr className='my-5' />
