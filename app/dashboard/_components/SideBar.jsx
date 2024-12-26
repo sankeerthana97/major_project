@@ -39,10 +39,8 @@ function SideBar() {
     const path=usePathname();
   return (
     <div className='fixed h-full md:w-64 p-5 shadow-md'>
-      <Link href={'/'}>
-          <span className='text-2xl font-bold'>DASHBOARD</span>
-        </div>
-      </Link>
+        <span className='text-2xl font-bold'>DASHBOARD</span>
+    </div>
         <hr className='my-5' />
 
         <ul>
