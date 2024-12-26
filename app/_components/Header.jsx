@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/button'
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -7,11 +6,11 @@ function Header() {
   return (
     <div className='flex justify-between p-5 shadow-sm'>
       <Link href={'/'}>
-        <Image src={'/logo1.png'} width={150} height={100}/>
-        </Link>
-        <Link href={'/dashboard'}>
-          <Button>Get Started</Button>
-        </Link>
+        <span className='text-2xl font-bold'>ACADAMY</span>
+      </Link>
+      <Link href={'/dashboard'}>
+        <Button>Get Started</Button>
+      </Link>
     </div>
   )
 }
