@@ -37,11 +37,10 @@ function SideBar() {
         }
     ]
     const path=usePathname();
-  return (
+ return (
     <div className='fixed h-full md:w-64 p-5 shadow-md'>
-        <Image src={'/logo.svg'} width={160} height={100} />
+        <h1 className='text-2xl font-bold mb-5'>DASHBOARD</h1>
         <hr className='my-5' />
-
         <ul>
             {Menu.map((item,index)=>(
                 <Link href={item.path}>
