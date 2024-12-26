@@ -2,7 +2,7 @@
 import { db } from '@/configs/db'
 import { Chapters, CourseList } from '@/configs/schema'
 import { and, eq } from 'drizzle-orm'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import ChapterListCard from './_components/ChapterListCard'
 import ChapterContent from './_components/ChapterContent'
 import { Button } from "@/components/ui/button"
@@ -12,6 +12,7 @@ function CourseStart({params}) {
     const [course, setCourse] = useState();
     const [selectedChapter, setSelectedChapter] = useState(0);
     const [chapterContent, setChapterContent] = useState();
+    const contentRef = useRef(null);
     
     useEffect(() => {
         GetCourse();
@@ -42,6 +43,9 @@ function CourseStart({params}) {
             const nextChapter = course.courseOutput.course.chapters[currentIndex + 1];
             setSelectedChapter(nextChapter);
             GetSelectedChapterContent(currentIndex + 1);
+            if (contentRef.current) {
+                contentRef.current.scrollTop = 0;
+            }
         }
     }
 
@@ -57,7 +61,7 @@ function CourseStart({params}) {
         <div className="min-h-screen flex flex-col">
             {/* Back Button */}
             <div className="p-4 border-b">
-                <Link href="https://major-project-eosin-sigma.vercel.app/dashboard">
+                <Link href="https://major-project-eosin-sigma.vercel.app/">
                     <Button variant="ghost" className="flex items-center gap-2">
                         ← Back to Courses
                     </Button>
@@ -79,6 +83,9 @@ function CourseStart({params}) {
                                 onClick={() => {
                                     setSelectedChapter(chapter);
                                     GetSelectedChapterContent(index);
+                                    if (contentRef.current) {
+                                        contentRef.current.scrollTop = 0;
+                                    }
                                 }}
                             >
                                 <ChapterListCard chapter={chapter} index={index} />
@@ -88,7 +95,7 @@ function CourseStart({params}) {
                 </div>
                 
                 {/* Content Div */}
-                <div className='flex-1 p-6 overflow-y-auto'>
+                <div className='flex-1 p-6 overflow-y-auto' ref={contentRef}>
                     <ChapterContent chapter={selectedChapter} content={chapterContent} />
                     
                     {/* Next Chapter or Take Test Button */}
