@@ -31,7 +31,7 @@ function SideBar() {
             id:1,
             name:'Logout',
             icon:<HiOutlinePower />,
-            path:'#'
+            onClick: handleLogout
         }
     ]
     const path=usePathname();
