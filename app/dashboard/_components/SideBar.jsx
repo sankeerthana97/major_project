@@ -25,9 +25,9 @@ function SideBar() {
         },
         {
             id:1,
-            name:'Upgrade',
+            name:'AI Test',
             icon:<HiOutlineShieldCheck />,
-            path:'/dashboard/upgrade'
+            path:'https://xnhurfu2ealdnmle.vercel.app/'
         },
         {
             id:1,
