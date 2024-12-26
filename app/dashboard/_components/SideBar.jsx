@@ -31,7 +31,7 @@ function SideBar() {
             id:1,
             name:'Logout',
             icon:<HiOutlinePower />,
-            onClick: handleLogout
+            path:'https://major-project-eosin-sigma.vercel.app/'
         }
     ]
     const path=usePathname();
