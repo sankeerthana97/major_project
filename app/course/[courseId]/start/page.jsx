@@ -6,7 +6,6 @@ import React, { useEffect, useState } from 'react'
 import ChapterListCard from './_components/ChapterListCard'
 import ChapterContent from './_components/ChapterContent'
 import { Button } from "@/components/ui/button"
-import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 
 function CourseStart({params}) {
@@ -41,8 +40,7 @@ function CourseStart({params}) {
             <div className="p-4 border-b">
                 <Link href="https://major-project-eosin-sigma.vercel.app/">
                     <Button variant="ghost" className="flex items-center gap-2">
-                        <ArrowLeft className="h-4 w-4" />
-                        Back to Courses
+                        ← Back to Courses
                     </Button>
                 </Link>
             </div>
