@@ -28,10 +28,10 @@ function SideBar() {
             path:'https://xnhurfu2ealdnmle.vercel.app/'
         },
         {
-            id:1,
-            name:'Logout',
-            icon:<HiOutlinePower />,
-            path:'/dashboard/logout'
+            id: 1,
+            name: 'Logout',
+            icon: <HiOutlinePower />,
+            onClick: handleLogout
         }
     ]
     const path=usePathname();
