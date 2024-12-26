@@ -39,8 +39,7 @@ function SideBar() {
     const path=usePathname();
   return (
     <div className='fixed h-full md:w-64 p-5 shadow-md'>
-        <span className='text-2xl font-bold'>DASHBOARD</span>
-    </div>
+        <Image src={'/logo.svg'} width={160} height={100} />
         <hr className='my-5' />
 
         <ul>
