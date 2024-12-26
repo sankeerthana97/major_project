@@ -38,7 +38,7 @@ function CourseStart({params}) {
         <div>
             {/* Back Button */}
             <div className="p-4 border-b">
-                <Link href="https://major-project-eosin-sigma.vercel.app/">
+                <Link href="https://major-project-eosin-sigma.vercel.app/dashboard">
                     <Button variant="ghost" className="flex items-center gap-2">
                         ← Back to Courses
                     </Button>
