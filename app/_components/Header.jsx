@@ -7,7 +7,7 @@ function Header() {
     <div className='flex justify-between items-center p-5 shadow-sm'>
       <Link href={'/'}>
         <div className='font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-red-950 to-red-900 hover:scale-105 transition-transform'>
-          Learning Analysis
+          Learning
         </div>
       </Link>
       <Link href={'/dashboard'}>
