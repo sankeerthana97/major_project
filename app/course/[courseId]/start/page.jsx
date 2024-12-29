@@ -71,15 +71,15 @@ function CourseStart({params}) {
             <div className="flex flex-1">
                 {/* Chapter list Side Bar */}
                 <div className='w-72 hidden md:block h-[calc(100vh-65px)] border-r shadow-sm overflow-y-auto'>
-                    <h2 className='font-medium text-lg bg-primary p-4 text-white'>
+                    <h2 className='font-medium text-lg bg-pink-600 p-4 text-white'>
                         {course?.courseOutput?.course?.name}
                     </h2>
                     <div>
                         {course?.courseOutput?.course?.chapters.map((chapter, index) => (
                             <div 
                                 key={index} 
-                                className={`cursor-pointer hover:bg-purple-50 
-                                ${selectedChapter?.name === chapter?.name ? 'bg-purple-100' : ''}`}
+                                className={`cursor-pointer hover:bg-pink-50 
+                                ${selectedChapter?.name === chapter?.name ? 'bg-pink-100' : ''}`}
                                 onClick={() => {
                                     setSelectedChapter(chapter);
                                     GetSelectedChapterContent(index);
@@ -103,14 +103,14 @@ function CourseStart({params}) {
                         {!isLastChapter ? (
                             <Button 
                                 onClick={handleNextChapter}
-                                className="w-full bg-purple-600 hover:bg-purple-700 text-white"
+                                className="w-full bg-pink-600 hover:bg-pink-700 text-white"
                             >
                                 Next Chapter
                             </Button>
                         ) : (
                             <Button 
                                 onClick={handleTakeTest}
-                                className="w-full bg-green-600 hover:bg-green-700 text-white"
+                                className="w-full bg-pink-600 hover:bg-pink-700 text-white"
                             >
                                 Take Final Test
                             </Button>
