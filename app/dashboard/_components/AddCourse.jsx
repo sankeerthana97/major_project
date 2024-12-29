@@ -13,15 +13,16 @@ function AddCourse() {
     return (
     <div className='flex items-center justify-between'>
         <div>
-            <h2 className='text-3xl'>Hello, 
-            <span className='font-bold'>{user?.fullName}</span></h2>
-            <p className='text-sm text-gray-500'>Create new course with AI, Share with friends and Earn from it</p>
+            <h2 className='text-3xl text-pink-800'>Hello, 
+            <span className='font-bold text-pink-900'>{user?.fullName}</span></h2>
+            <p className='text-sm text-pink-600'>Create new course with AI, Share with friends and Earn from it</p>
         </div>
         <Link href={userCourseList?.length>=100000?'https://www.tubeguruji.com/tubeguruji-pro':'/create-course'}>
-             <Button>+ Create AI Course</Button>
+             <Button className="bg-pink-600 hover:bg-pink-700 text-white">+ Create AI Course</Button>
         </Link>
     </div>
   )
 }
 
 export default AddCourse
+
