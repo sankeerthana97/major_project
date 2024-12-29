@@ -33,16 +33,16 @@ function FinishScreen({params}) {
 
     return (
       <div className='px-10 md:px-20 lg:px-44 my-7'>
-          <h2 className='text-center font-bold text-2xl my-3 text-primary'>Congrats! Your course is Ready</h2>
+          <h2 className='text-center font-bold text-2xl my-3 text-pink-700'>Congrats! Your course is Ready</h2>
           
           <CourseBasicInfo course={course} refreshData={()=>console.log()} />
           <h2 className='mt-3'>Course URL:</h2>
           <div className='flex items-center gap-3'>
-            <h2 className='text-center text-gray-400 border p-2 round flex-1'>
+            <h2 className='text-center text-pink-600 border-pink-300 p-2 rounded flex-1'>
               {baseUrl}/course/{course?.courseId}
             </h2>
             <Button
-              variant="outline"
+              className="border border-pink-300 hover:bg-pink-100 text-pink-600"
               size="icon"
               onClick={async()=>await navigator.clipboard.writeText(`${baseUrl}/course/${course?.courseId}`)}
             >
@@ -50,7 +50,7 @@ function FinishScreen({params}) {
             </Button>
             <Button 
               onClick={handleVisitCourse}
-              className="whitespace-nowrap"
+              className="bg-pink-600 hover:bg-pink-700 text-white whitespace-nowrap"
             >
               Visit Course
             </Button>
