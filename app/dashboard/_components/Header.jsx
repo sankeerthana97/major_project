@@ -6,8 +6,8 @@ function Header() {
   return (
     <div className='flex justify-between items-center p-5 shadow-sm'>
        <Link href={'/dashboard'}>
-        <div className='font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 hover:scale-105 transition-transform'>
-          ACADAMY
+        <div className='font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-pink-700 to-pink-500 hover:scale-105 transition-transform'>
+          LEARNING
         </div>
         </Link>
         <UserButton/>
@@ -16,3 +16,4 @@ function Header() {
 }
 
 export default Header
+
