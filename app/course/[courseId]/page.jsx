@@ -24,21 +24,22 @@ function Course({params}) {
     }
 
   return (
-    <div>
+    <div className="bg-pink-50 min-h-screen">
         <Header/>
-        <div className='px-10 p-10 md:px-20 lg:px-44'>
-        <CourseBasicInfo course={course} edit={false} />
-
-        <CourseDetail course={course} />
-
-        <ChapterList course={course}  edit={false}/>
+        <div className='px-6 py-8 md:px-12 lg:px-20'>
+          <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <CourseBasicInfo course={course} edit={false} />
+            <CourseDetail course={course} />
+            <ChapterList course={course}  edit={false}/>
+          </div>
         </div>
-        <h2 className='text-sm text-gray-400 text-center mb-10'>This course created on 
-        <Link href={''}>
-        ACADAMY AI Course 
+        <h2 className='text-sm text-pink-700 text-center mb-10'>This course created on 
+        <Link href={''} className="underline decoration-pink-500 hover:text-pink-800">
+        LEARNING AI Course 
         </Link></h2>
     </div>
   )
 }
 
 export default Course
+
