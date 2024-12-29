@@ -36,16 +36,16 @@ function SideBar() {
     ]
     const path=usePathname();
     return (
-        <div className='fixed h-full md:w-64 p-5 shadow-md'>
-            <h1 className='text-2xl font-bold mb-5'>DASHBOARD</h1>
-            <hr className='my-5' />
+        <div className='fixed h-full md:w-64 p-5 shadow-md bg-pink-50'>
+            <h1 className='text-2xl font-bold mb-5 text-pink-800'>DASHBOARD</h1>
+            <hr className='my-5 border-pink-200' />
             <ul>
                 {Menu.map((item,index)=>(
-                    <Link href={item.path}>
-                        <div className={`flex items-center gap-2 text-gray-600
-                        p-3 cursor-pointer hover:bg-gray-100
-                        hover:text-black rounded-lg mb-3
-                        ${item.path==path&&'bg-gray-100 text-black'}`}> 
+                    <Link href={item.path} key={item.id}>
+                        <div className={`flex items-center gap-2 text-pink-600
+                        p-3 cursor-pointer hover:bg-pink-100
+                        hover:text-pink-800 rounded-lg mb-3
+                        ${item.path==path&&'bg-pink-100 text-pink-800'}`}> 
                             <div className='text-2xl'>{item.icon}</div>
                             <h2>{item.name}</h2>
                         </div>
@@ -53,11 +53,12 @@ function SideBar() {
                 ))}
             </ul>
             <div className='absolute bottom-10 w-[80%]'>
-                <Progress value={(userCourseList?.length/5)*100} />
-                <h2 className='text-sm my-2'>Total Courses Generated: {userCourseList?.length}</h2>
+                <Progress value={(userCourseList?.length/5)*100} className="bg-pink-200" />
+                <h2 className='text-sm my-2 text-pink-700'>Total Courses Generated: {userCourseList?.length}</h2>
             </div>
         </div>
     )
 }
 
 export default SideBar
+
