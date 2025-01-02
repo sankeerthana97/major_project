@@ -9,7 +9,7 @@ function Hero() {
           <div className="flex justify-center">
             <a className="inline-flex items-center gap-x-2 bg-pink-50 border border-pink-200 text-sm text-pink-800 p-1 ps-3 rounded-full transition hover:border-pink-300 dark:bg-pink-900 dark:border-pink-700 dark:hover:border-pink-600 dark:text-pink-200" 
             href="dashboard" target="_blank">
-              Digital Identity and Learning Analysis - Join Now
+              Personalized Learning Using AI - Join Now
               <span className="py-1.5 px-2.5 inline-flex justify-center items-center gap-x-2 rounded-full bg-pink-100 font-semibold text-sm text-pink-800 dark:bg-pink-800 dark:text-pink-200">
                 <svg className="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               </span>
