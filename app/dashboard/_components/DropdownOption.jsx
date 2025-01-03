@@ -26,26 +26,26 @@ function DropdownOption({children, handleOnDelete}) {
     return (
         <div>
             <DropdownMenu>
-                <DropdownMenuTrigger className="text-pink-600 hover:text-pink-700">
+                <DropdownMenuTrigger className="text-violet-600 hover:text-violet-700">
                     {children}
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-pink-50 border-pink-200">
+                <DropdownMenuContent className="bg-violet-50 border-violet-200">
                     <DropdownMenuItem 
                         onClick={() => setOpenAlert(true)}
-                        className="text-pink-700 hover:bg-pink-100 focus:bg-pink-100"
+                        className="text-violet-700 hover:bg-violet-100 focus:bg-violet-100"
                     >
                         <div className='flex items-center gap-1'>
-                            <HiOutlineTrash className="text-pink-600" /> Delete
+                            <HiOutlineTrash className="text-violet-600" /> Delete
                         </div>
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
 
             <AlertDialog open={openAlert}>
-                <AlertDialogContent className="bg-pink-50 border-pink-200">
+                <AlertDialogContent className="bg-violet-50 border-violet-200">
                     <AlertDialogHeader>
-                        <AlertDialogTitle className="text-pink-800">Are you absolutely sure?</AlertDialogTitle>
-                        <AlertDialogDescription className="text-pink-600">
+                        <AlertDialogTitle className="text-violet-800">Are you absolutely sure?</AlertDialogTitle>
+                        <AlertDialogDescription className="text-violet-600">
                             This action cannot be undone. This will permanently delete your account
                             and remove your data from our servers.
                         </AlertDialogDescription>
@@ -53,13 +53,13 @@ function DropdownOption({children, handleOnDelete}) {
                     <AlertDialogFooter>
                         <AlertDialogCancel 
                             onClick={() => setOpenAlert(false)}
-                            className="bg-pink-100 text-pink-700 hover:bg-pink-200"
+                            className="bg-violet-100 text-violet-700 hover:bg-violet-200"
                         >
                             Cancel
                         </AlertDialogCancel>
                         <AlertDialogAction 
                             onClick={() => {handleOnDelete(); setOpenAlert(false)}}
-                            className="bg-pink-600 text-white hover:bg-pink-700"
+                            className="bg-violet-600 text-white hover:bg-violet-700"
                         >
                             Continue
                         </AlertDialogAction>
