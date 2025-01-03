@@ -42,7 +42,7 @@ function SideBar() {
             <ul>
                 {Menu.map((item,index)=>(
                     <Link href={item.path} key={item.id}>
-                        <div className={`flex items-center gap-2 text-pink-600
+                        <div className={`flex items-center gap-2 text-violet-600
                         p-3 cursor-pointer hover:bg-violet-100
                         hover:text-violet-800 rounded-lg mb-3
                         ${item.path==path&&'bg-violet-100 text-violet-800'}`}> 
@@ -53,8 +53,8 @@ function SideBar() {
                 ))}
             </ul>
             <div className='absolute bottom-10 w-[80%]'>
-                <Progress value={(userCourseList?.length/5)*100} className="bg-pink-200" />
-                <h2 className='text-sm my-2 text-pink-700'>Total Courses Generated: {userCourseList?.length}</h2>
+                <Progress value={(userCourseList?.length/5)*100} className="bg-violet-200" />
+                <h2 className='text-sm my-2 text-violet-700'>Total Courses Generated: {userCourseList?.length}</h2>
             </div>
         </div>
     )
