@@ -1,7 +1,6 @@
 import React from 'react'
 import YouTube from 'react-youtube'
 import ReactMarkdown from 'react-markdown';
-
 const opts = {
     height: '390',
     width: '640',
@@ -9,7 +8,6 @@ const opts = {
       autoplay: 0,
     },
   };
-
 function ChapterContent({chapter,content}) {
     console.log(chapter)
     
@@ -28,8 +26,9 @@ function ChapterContent({chapter,content}) {
 
         <div>
             {content?.content?.map((item,index)=>(
-                <div className='p-5 bg-blue-50 shadow-sm mb-3 rounded-lg'>
-                    <h2 className='font-medium text-2xl text-violet-700'>{item.title}</h2>
+                <div className='p-5 bg-purple-50 shadow-sm mb-3 rounded-lg'>
+                    <h2 className='font-medium text-2xl'>{item.title}</h2>
+                    {/* <p className='whitespace-pre-wrap'>{item?.description}</p> */}
                     <ReactMarkdown className='text-lg text-black leading-9'>{item?.description}</ReactMarkdown>
                   { item.codeExample&& 
                   <div className='p-4 bg-black text-white rounded-md mt-3'>
