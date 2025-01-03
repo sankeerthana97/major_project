@@ -36,16 +36,16 @@ function SideBar() {
     ]
     const path=usePathname();
     return (
-        <div className='fixed h-full md:w-64 p-5 shadow-md bg-pink-50'>
-            <h1 className='text-2xl font-bold mb-5 text-pink-800'>DASHBOARD</h1>
-            <hr className='my-5 border-pink-200' />
+        <div className='fixed h-full md:w-64 p-5 shadow-md bg-violet-50'>
+            <h1 className='text-2xl font-bold mb-5 text-violet-800'>DASHBOARD</h1>
+            <hr className='my-5 border-violet-200' />
             <ul>
                 {Menu.map((item,index)=>(
                     <Link href={item.path} key={item.id}>
                         <div className={`flex items-center gap-2 text-pink-600
-                        p-3 cursor-pointer hover:bg-pink-100
-                        hover:text-pink-800 rounded-lg mb-3
-                        ${item.path==path&&'bg-pink-100 text-pink-800'}`}> 
+                        p-3 cursor-pointer hover:bg-violet-100
+                        hover:text-violet-800 rounded-lg mb-3
+                        ${item.path==path&&'bg-violet-100 text-violet-800'}`}> 
                             <div className='text-2xl'>{item.icon}</div>
                             <h2>{item.name}</h2>
                         </div>
