@@ -7,11 +7,13 @@ import React, { useEffect, useState } from 'react'
 import ChapterListCard from './_components/ChapterListCard'
 import ChapterContent from './_components/ChapterContent'
 import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
 
 function CourseStart({params}) {
     const [course, setCourse] = useState()
     const [selectedChapter, setSelectedChapter] = useState(0)
     const [chapterContent, setChapterContent] = useState()
+    const router = useRouter()
 
     useEffect(() => {
         GetCourse()
@@ -84,7 +86,7 @@ function CourseStart({params}) {
                     {!isLastChapter ? (
                         <Button onClick={handleNextChapter}>NEXT CHAPTER</Button>
                     ) : (
-                        <Button>FINISH COURSE</Button>
+                        <Button onClick={() => router.push('https://xnhurfu2ealdnmle.vercel.app/')}>TAKE TEST</Button>
                     )}
                 </div>
             </div>
