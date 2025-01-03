@@ -13,7 +13,7 @@ function AddCourse() {
     return (
     <div className='flex items-center justify-between'>
         <div>
-            <h2 className='text-3xl text-pink-800'>Hello, 
+            <h2 className='text-3xl text-violet-800'>Hello, 
             <span className='font-bold text-violet-900'>{user?.fullName}</span></h2>
             <p className='text-sm text-violet-600'>Create new course with AI, Share with friends and Earn from it</p>
         </div>
