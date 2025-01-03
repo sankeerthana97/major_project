@@ -26,7 +26,7 @@ function UserCourseList() {
 
   return (
     <div className='mt-10'>
-      <h2 className='font-medium text-xl text-pink-800'>My AI Courses</h2>
+      <h2 className='font-medium text-xl text-violet-800'>My AI Courses</h2>
 
       <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5'>
         {courseList?.length > 0 ? courseList?.map((course, index) => (
@@ -35,7 +35,7 @@ function UserCourseList() {
           :
           [1, 2, 3, 4, 5].map((item, index) => (
             <div key={index} className='w-full mt-5
-          bg-pink-200 animate-pulse rounded-lg h-[270px]'>
+          bg-violet-200 animate-pulse rounded-lg h-[270px]'>
             </div>
           ))
         }
