@@ -40,21 +40,21 @@ function CourseBasicInfo({course, refreshData, edit=true}) {
   }
 
   return (
-    <div className='p-10 border border-pink-200 rounded-xl shadow-sm mt-5 relative bg-pink-50'>
+    <div className='p-10 border border-blue-200 rounded-xl shadow-sm mt-5 relative bg-blue-50'>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
             <div>
-                <h2 className='font-bold text-3xl text-pink-800'>
+                <h2 className='font-bold text-3xl text-violet-800'>
                   {course?.courseOutput?.course?.name} 
                   {edit && <EditCourseBasicInfo course={course} refreshData={() => refreshData(true)} />}
                 </h2>
-                <p className='text-sm text-pink-600 mt-3'>{course?.courseOutput?.course?.description}</p>
-                <h2 className='font-medium mt-2 flex gap-2 items-center text-pink-700'>
-                  <HiOutlineRectangleStack className="text-pink-600" />
+                <p className='text-sm text-blue-600 mt-3'>{course?.courseOutput?.course?.description}</p>
+                <h2 className='font-medium mt-2 flex gap-2 items-center text-violet-700'>
+                  <HiOutlineRectangleStack className="text-blue-600" />
                   {course?.category}
                 </h2>
                 {!edit && (
                   <Link href={'/course/' + course?.courseId + "/start"}>
-                    <Button className="w-full mt-5 bg-pink-600 hover:bg-pink-700 text-white">Start</Button>
+                    <Button className="w-full mt-5 bg-violet-600 hover:bg-violet-700 text-white">Start</Button>
                   </Link>
                 )}
             </div>
@@ -65,7 +65,7 @@ function CourseBasicInfo({course, refreshData, edit=true}) {
                     width={300} 
                     height={300}
                     alt="Course Banner"
-                    className='w-full rounded-xl h-[250px] object-cover cursor-pointer border-4 border-pink-300 hover:border-pink-400 transition-colors'
+                    className='w-full rounded-xl h-[250px] object-cover cursor-pointer border-4 border-blue-300 hover:border-blue-400 transition-colors'
                   />
                 </label>
                 {edit && (
@@ -83,4 +83,3 @@ function CourseBasicInfo({course, refreshData, edit=true}) {
 }
 
 export default CourseBasicInfo
-
