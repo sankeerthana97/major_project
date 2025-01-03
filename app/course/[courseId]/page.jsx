@@ -1,45 +1,79 @@
 "use client"
-import Header from '@/app/_components/Header'
-import ChapterList from '@/app/create-course/[courseId]/_components/ChapterList'
-import CourseBasicInfo from '@/app/create-course/[courseId]/_components/CourseBasicInfo'
-import CourseDetail from '@/app/create-course/[courseId]/_components/CourseDetail'
 import { db } from '@/configs/db'
-import { CourseList } from '@/configs/schema'
-import { eq } from 'drizzle-orm'
-import Link from 'next/link'
+import { Chapters, CourseList } from '@/configs/schema'
+import { and, eq } from 'drizzle-orm'
 import React, { useEffect, useState } from 'react'
+import ChapterListCard from './_components/ChapterListCard'
+import ChapterContent from './_components/ChapterContent'
 
-function Course({params}) {
+function CourseStart({params}) {
+
     const [course,setCourse]=useState();
+    const [selectedChapter,setSelectedChapter]=useState(0);
+    const [chapterContent,setChapterContent]=useState();
     useEffect(()=>{
-        params&&GetCourse();
-    },[params])
+        GetCourse();
+    },[])
 
+    // useEffect(()=>{
+       
+    //     GetSelectedChapterContent(0)
+    // },[course])
+
+    /**
+     * Used to get Course Info by Course Id
+     */
     const GetCourse=async()=>{
         const result=await db.select().from(CourseList)
-        .where(eq(CourseList?.courseId,params?.courseId))
+        .where(eq(CourseList?.courseId,params?.courseId));
 
         setCourse(result[0]);
+        
+
+    }
+
+    const GetSelectedChapterContent=async(chapterId)=>{
+      
+        const result=await db.select().from(Chapters)
+        .where(and(eq(Chapters.chapterId,chapterId),
+        eq(Chapters.courseId,course?.courseId)));
+
+        setChapterContent(result[0]);
         console.log(result);
+
     }
 
   return (
-    <div className="bg-blue-50 min-h-screen">
-        <Header/>
-        <div className='px-6 py-8 md:px-12 lg:px-20'>
-          <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-            <CourseBasicInfo course={course} edit={false} />
-            <CourseDetail course={course} />
-            <ChapterList course={course}  edit={false}/>
-          </div>
+    <div>
+        {/* Chapter list Side Bar  */}
+        <div className=' fixed md:w-72 hidden md:block h-screen border-r shadow-sm'>
+            <h2 className='font-medium text-lg bg-primary p-4
+            text-white'>{course?.courseOutput?.course?.name}</h2>
+
+            <div>
+                {course?.courseOutput?.course?.chapters.map((chapter,index)=>(
+                    <div key={index} 
+                    className={`cursor-pointer
+                    hover:bg-purple-50
+                    ${selectedChapter?.name==chapter?.name&&'bg-purple-100'}
+                    `}
+                    onClick={()=>{setSelectedChapter(chapter);
+                    GetSelectedChapterContent(index)
+                    }}
+                    >
+                        <ChapterListCard chapter={chapter} index={index} />
+                    </div>
+                ))}
+            </div>
         </div>
-        <h2 className='text-sm text-violet-700 text-center mb-10'>This course created on 
-        <Link href={''} className="underline decoration-blue-500 hover:text-violet-800">
-        LEARNING AI Course 
-        </Link></h2>
+        {/* Content Div  */}
+        <div className='md:ml-72'>
+            <ChapterContent chapter={selectedChapter}
+                content={chapterContent}
+            />
+        </div>
     </div>
   )
 }
 
-export default Course
-
+export default CourseStart
