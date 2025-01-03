@@ -35,7 +35,7 @@ function Course({params}) {
         </div>
         <h2 className='text-sm text-gray-400 text-center mb-10'>This course created on 
         <Link href={''}>
-        Tubeguruji AI Course Builder
+        Personalised Learning PLatform using AI
         </Link></h2>
     </div>
   )
