@@ -40,24 +40,24 @@ function EditCourseBasicInfo({course, refreshData}) {
     return (
         <Dialog>
             <DialogTrigger>
-                <HiPencilSquare className="text-pink-600 hover:text-pink-700 transition-colors" />
+                <HiPencilSquare className="text-violet-600 hover:text-violet-700 transition-colors" />
             </DialogTrigger>
-            <DialogContent className="bg-pink-50 border border-pink-200">
+            <DialogContent className="bg-blue-50 border border-blue-200">
                 <DialogHeader>
-                    <DialogTitle className="text-2xl font-bold text-pink-800">Edit Course Title & Description</DialogTitle>
-                    <DialogDescription className="text-pink-600">
+                    <DialogTitle className="text-2xl font-bold text-violet-800">Edit Course Title & Description</DialogTitle>
+                    <DialogDescription className="text-blue-600">
                         <div className='mt-3'>
-                            <label className="text-pink-700 font-medium">Course Title</label>
+                            <label className="text-violet-700 font-medium">Course Title</label>
                             <Input 
                                 defaultValue={course?.courseOutput?.course?.name}
                                 onChange={(event) => setName(event?.target.value)}
-                                className="border-pink-300 focus:border-pink-500 focus:ring-pink-500 bg-white text-pink-800"
+                                className="border-blue-300 focus:border-blue-500 focus:ring-blue-500 bg-white text-violet-800"
                             />
                         </div>
                         <div className="mt-3">
-                            <label className="text-pink-700 font-medium">Description</label>
+                            <label className="text-violet-700 font-medium">Description</label>
                             <Textarea 
-                                className="h-40 border-pink-300 focus:border-pink-500 focus:ring-pink-500 bg-white text-pink-800" 
+                                className="h-40 border-blue-300 focus:border-blue-500 focus:ring-blue-500 bg-white text-violet-800" 
                                 defaultValue={course?.courseOutput?.course?.description}
                                 onChange={(event) => setDescription(event?.target.value)}
                             />
@@ -68,7 +68,7 @@ function EditCourseBasicInfo({course, refreshData}) {
                     <DialogClose>
                         <Button 
                             onClick={onUpdateHandler}
-                            className="bg-pink-600 hover:bg-pink-700 text-white transition-colors"
+                            className="bg-violet-600 hover:bg-violet-700 text-white transition-colors"
                         >
                             Update
                         </Button>
