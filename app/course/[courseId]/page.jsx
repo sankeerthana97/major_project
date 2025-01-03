@@ -24,7 +24,7 @@ function Course({params}) {
     }
 
   return (
-    <div className="bg-pink-50 min-h-screen">
+    <div className="bg-blue-50 min-h-screen">
         <Header/>
         <div className='px-6 py-8 md:px-12 lg:px-20'>
           <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
@@ -33,8 +33,8 @@ function Course({params}) {
             <ChapterList course={course}  edit={false}/>
           </div>
         </div>
-        <h2 className='text-sm text-pink-700 text-center mb-10'>This course created on 
-        <Link href={''} className="underline decoration-pink-500 hover:text-pink-800">
+        <h2 className='text-sm text-violet-700 text-center mb-10'>This course created on 
+        <Link href={''} className="underline decoration-blue-500 hover:text-violet-800">
         LEARNING AI Course 
         </Link></h2>
     </div>
