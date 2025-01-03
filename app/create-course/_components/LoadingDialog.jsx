@@ -16,7 +16,7 @@ import Image from 'next/image'
 function LoadingDialog({loading}) {
   return (
     <AlertDialog open={loading}>
-  <AlertDialogContent>
+  <AlertDialogContent className="bg-gradient-to-br from-blue-500 via-blue-600 to-violet-600">
     <AlertDialogHeader>
       <AlertDialogDescription>
         <div className='flex flex-col items-center py-10'>
