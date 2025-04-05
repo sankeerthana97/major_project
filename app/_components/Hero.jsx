@@ -18,8 +18,8 @@ function Hero() {
          
           <div className="mt-5 max-w-2xl text-center mx-auto">
             <h1 className="block font-bold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-neutral-200">
-              AI Course
-              <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-400 text-transparent"> Generator</span>
+              The Intelligent
+              <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-400 text-transparent"> Tutor</span>
             </h1>
           </div>
          
